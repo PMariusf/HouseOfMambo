@@ -1,26 +1,89 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+    /* Hovedfarger */
+    --color-background: #080808;
+    --color-surface: #1a1a1a;
+    --color-text-main: #f4f1ea;
+
+    /*  Gull og aksenter */
+    --color-gold-main: #d39d3b;
+    --color-gold-champagne: #f0d6ad;
+    --color-gold-bronze: #8f6327;
+
+    /*  Ekstra aksent */
+    --color-mambo-red: #d92b43;
+
+    /*  Fonter (kobles mot Next.js sine variabler fra layout.tsx) */
+    --font-bebas: var(--font-bebas), sans-serif;
+    --font-montserrat: var(--font-montserrat), sans-serif;
+    --font-inter: var(--font-inter), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base-styling for hele nettsiden */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+    font-family: var(--font-inter);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom hjelpeklasser i Tailwind v4 syntaks */
+@utility title-primary {
+    font-family: var(--font-bebas);
+    color: var(--color-gold-main);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+@utility title-secondary {
+    font-family: var(--font-montserrat);
+    color: var(--color-gold-champagne);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+}
+
+@utility btn-primary {
+    background-color: var(--color-gold-main);
+    color: var(--color-background);
+    font-family: var(--font-montserrat);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    padding: 0.75rem 2rem;
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+        background-color: var(--color-gold-bronze);
+        color: #ffffff;
+    }
+}
+
+@utility btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--color-gold-champagne);
+    color: var(--color-gold-champagne);
+    font-family: var(--font-montserrat);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    padding: 0.75rem 2rem;
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+        background-color: var(--color-gold-champagne);
+        color: var(--color-background);
+    }
+}
+
+@utility mambo-card {
+    background-color: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+
+    @media (min-width: 768px) {
+        padding: 2rem;
+    }
 }
