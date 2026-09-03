@@ -1,7 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-    /* Hovedfarger */
+    /* Breakpoints (Mobile-first standard) */
+    --breakpoint-m: 768px; /* Nettbrett / Tablet */
+    --breakpoint-l: 1024px; /* Bærbar PC / Desktop */
+    --breakpoint-xl: 1280px; /* Stor PC-skjerm */
+
+    /*  Hovedfarger */
     --color-background: #080808;
     --color-surface: #1a1a1a;
     --color-text-main: #f4f1ea;
@@ -83,7 +88,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 1.5rem;
 
-    @media (min-width: 768px) {
+    @variant m {
         padding: 2rem;
     }
 }
