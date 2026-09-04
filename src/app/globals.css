@@ -36,8 +36,47 @@ body {
 }
 
 button,
-input {
+input,
+select,
+textarea {
     font: inherit;
+}
+
+select {
+    color-scheme: dark;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.55rem;
+    color: color-mix(in srgb, var(--color-gold-champagne) 72%, transparent);
+    font-family: var(--font-montserrat);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.form-control {
+    width: 100%;
+    min-height: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+    outline: none;
+    background: var(--color-background);
+    padding: 0.8rem 0.9rem;
+    color: var(--color-text-main);
+    font-size: 0.9rem;
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.form-control::placeholder {
+    color: color-mix(in srgb, var(--color-text-main) 25%, transparent);
+}
+
+.form-control:focus {
+    border-color: color-mix(in srgb, var(--color-gold-main) 75%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-gold-main) 10%, transparent);
 }
 
 .site-container {

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ReservationForm from "./ReservationForm";
 
 const navigation = [
     { label: "Classes", href: "#classes" },
@@ -101,7 +102,7 @@ export default function Home() {
                     </nav>
 
                     <div className="hidden items-center gap-4 l:flex">
-                        <a href="#reserve" className="btn-primary btn-small">Reserve table</a>
+                        <a href="#booking" className="btn-primary btn-small">Reserve table</a>
                         <span className="grid size-8 place-items-center rounded-full bg-gold-main text-xs text-background" aria-hidden="true">♟</span>
                     </div>
 
@@ -112,7 +113,7 @@ export default function Home() {
                         </summary>
                         <nav className="absolute right-0 top-14 z-50 flex w-64 flex-col border border-white/10 bg-surface p-2 shadow-2xl" aria-label="Mobile navigation">
                             {navigation.map((item) => <a key={item.label} href={item.href} className="border-b border-white/6 px-4 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-text-main/75 last:border-0 hover:bg-white/5 hover:text-gold-main">{item.label}</a>)}
-                            <a href="#reserve" className="btn-primary mt-2 text-center">Reserve table</a>
+                            <a href="#booking" className="btn-primary mt-2 text-center">Reserve table</a>
                         </nav>
                     </details>
                 </div>
@@ -141,7 +142,7 @@ export default function Home() {
                                 <p className="max-w-md text-base leading-7 text-text-main/72">Where the raw kinetic pulse of Afro-Cuban salsa converges with the nocturnal opulence of Bergen&apos;s most guarded inner circle. Master the On2 cadence by day. Claim the lounge by night.</p>
                                 <div className="mt-7 grid max-w-md gap-3 sm:grid-cols-2">
                                     <a href="#classes" className="btn-primary text-center">Explore classes</a>
-                                    <a href="#reserve" className="btn-secondary text-center">Reserve VIP table</a>
+                                    <a href="#booking" className="btn-secondary text-center">Reserve VIP table</a>
                                 </div>
                             </div>
 
@@ -200,7 +201,7 @@ export default function Home() {
                             <h3 className="card-title mt-8 text-3xl">{item.title}</h3>
                             <p className="micro-label mt-2 text-gold-champagne/60">{item.subtitle}</p>
                             <p className="mt-4 text-sm leading-6 text-text-main/55">{item.description}</p>
-                            <div className="mt-auto flex items-center justify-between border-t border-white/8 pt-5"><a href="#reserve" className="micro-label text-gold-main transition-colors hover:text-gold-champagne">{item.action} →</a><span className="text-[0.6rem] uppercase tracking-[0.14em] text-text-main/30">{item.meta}</span></div>
+                            <div className="mt-auto flex items-center justify-between border-t border-white/8 pt-5"><a href="#booking" className="micro-label text-gold-main transition-colors hover:text-gold-champagne">{item.action} →</a><span className="text-[0.6rem] uppercase tracking-[0.14em] text-text-main/30">{item.meta}</span></div>
                         </article>
                     ))}
                 </div>
@@ -223,7 +224,27 @@ export default function Home() {
                 </div>
             </section>
 
-            <section id="club" className="border-y border-white/7 bg-[#0d0d0d]">
+            <section id="booking" className="border-y border-white/7 bg-[#0d0d0d] scroll-mt-24">
+                <div className="site-container section-space">
+                    <div className="grid gap-10 l:grid-cols-[0.72fr_1.28fr] l:gap-14">
+                        <div>
+                            <SectionHeading eyebrow="Private reservations" title="Request your evening" />
+                            <p className="mt-6 text-base leading-7 text-text-main/58">Choose your preferred House of Mambo experience. Our host team will review the request and contact you with availability and final details.</p>
+                            <div className="mt-8 border-l border-gold-main/45 pl-5">
+                                <p className="micro-label">Booking notes</p>
+                                <ul className="mt-4 space-y-3 text-sm leading-6 text-text-main/48">
+                                    <li>Tables and club access are subject to availability.</li>
+                                    <li>Membership events may require a referral or guest code.</li>
+                                    <li>Groups larger than 20 guests can contact us directly.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <ReservationForm />
+                    </div>
+                </div>
+            </section>
+
+            <section id="club" className="border-b border-white/7 bg-background">
                 <div className="site-container section-space">
                     <div className="grid gap-10 l:grid-cols-[1fr_1fr] l:gap-8">
                         <div>
@@ -244,7 +265,7 @@ export default function Home() {
                         </div>
 
                         <div className="space-y-5">
-                            <article id="reserve" className="border border-white/8 bg-[#252525] p-6 m:p-8">
+                            <article id="membership" className="border border-white/8 bg-[#252525] p-6 m:p-8">
                                 <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
                                     <div><h3 className="font-bebas text-2xl tracking-[0.06em] text-gold-main">♙ Patron membership</h3><p className="micro-label mt-1 text-gold-champagne/55">Private society · by referral</p></div>
                                     <p className="font-bebas text-3xl tracking-[0.04em] text-gold-main">NOK 1.850<span className="text-base text-text-main/50">/mo</span></p>
