@@ -10,8 +10,8 @@ const navigation = [
 ];
 
 const socialLinks = [
-    { label: "Facebook", shortLabel: "FB", href: "https://www.facebook.com/p/House-of-Mambo-Bergen-61592891530613/" },
-    { label: "Instagram", shortLabel: "IG", href: "https://www.instagram.com/houseofmambo_bergen/" },
+    { label: "Facebook", href: "https://www.facebook.com/p/House-of-Mambo-Bergen-61592891530613/" },
+    { label: "Instagram", href: "https://www.instagram.com/houseofmambo_bergen/" },
 ];
 
 const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScT5zKljxst6T0PryoGCMd0FzCBLUKAt5WrsHJ5RODgPDK7Ow/viewform";
@@ -87,6 +87,24 @@ const footerGroups = [
     { title: "Community", items: ["Regular classes", "Weekend workshops", "Social dance parties", "Showteams"] },
 ];
 
+function SocialIcon({ platform, className = "size-4" }: { platform: string; className?: string }) {
+    if (platform === "Facebook") {
+        return (
+            <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M13.7 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5H17V3.7c-.7-.1-1.5-.2-2.3-.2-2.8 0-4.7 1.7-4.7 4.8v1.6H7V13h3v8h3.7Z" />
+            </svg>
+        );
+    }
+
+    return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none" />
+        </svg>
+    );
+}
+
 function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
     return (
         <div>
@@ -113,7 +131,7 @@ export default function Home() {
                         <a href="#booking" className="btn-primary btn-small">Course sign-up</a>
                         <div className="flex items-center gap-2">
                             {socialLinks.map((social) => (
-                                <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="social-link" aria-label={`House of Mambo on ${social.label}`}>{social.shortLabel}</a>
+                                <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="social-link" aria-label={`House of Mambo on ${social.label}`}><SocialIcon platform={social.label} /></a>
                             ))}
                         </div>
                     </div>
@@ -127,7 +145,7 @@ export default function Home() {
                             {navigation.map((item) => <a key={item.label} href={item.href} className="border-b border-white/6 px-4 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-text-main/75 last:border-0 hover:bg-white/5 hover:text-gold-main">{item.label}</a>)}
                             <a href="#booking" className="btn-primary mt-2 text-center">Course sign-up</a>
                             <div className="mt-2 grid grid-cols-2 gap-2">
-                                {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="border border-white/10 px-3 py-3 text-center text-xs font-semibold uppercase tracking-[0.12em] text-gold-champagne">{social.label}</a>)}
+                                {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 border border-white/10 px-3 py-3 text-center text-xs font-semibold uppercase tracking-[0.12em] text-gold-champagne"><SocialIcon platform={social.label} />{social.label}</a>)}
                             </div>
                         </nav>
                     </details>
@@ -190,7 +208,7 @@ export default function Home() {
                     <div className="mt-9 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border border-white/8 bg-surface/65 px-4 py-3 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-text-main/45">
                         <span className="text-gold-bronze">● Follow the House of Mambo community:</span>
                         <div className="flex flex-wrap gap-5">
-                            {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="text-gold-champagne transition-colors hover:text-gold-main">{social.label} ↗</a>)}
+                            {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-gold-champagne transition-colors hover:text-gold-main"><SocialIcon platform={social.label} className="size-3.5" />{social.label} ↗</a>)}
                         </div>
                         <span>Classes ◆ Workshops ◆ Socials ◆ Showteams</span>
                     </div>
@@ -318,7 +336,7 @@ export default function Home() {
                 <div className="grid gap-6 border border-white/8 bg-[#252525] p-6 m:p-8 l:grid-cols-[1.15fr_0.85fr] l:items-center">
                     <div><p className="micro-label">Stay connected</p><h2 className="font-bebas text-3xl tracking-[0.055em] text-text-main">Follow classes, workshops & socials</h2><p className="mt-2 text-sm leading-6 text-text-main/48">Follow House of Mambo for registration announcements, weekly course updates, workshops, social dance parties, and community highlights.</p></div>
                     <div className="grid gap-3 sm:grid-cols-2">
-                        {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="btn-primary min-h-12 text-center">{social.label} ↗</a>)}
+                        {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="btn-primary inline-flex min-h-12 items-center justify-center gap-2 text-center"><SocialIcon platform={social.label} className="size-5" />{social.label} ↗</a>)}
                     </div>
                 </div>
 
@@ -328,13 +346,13 @@ export default function Home() {
                             <Image src="/images/house-of-mambo-logo.png" alt="House of Mambo Bergen" width={600} height={408} className="h-auto w-32 object-contain m:w-40" />
                             <p className="micro-label mt-4 text-gold-champagne/50">House of Mambo Bergen</p>
                             <p className="mt-5 max-w-[15rem] text-xs leading-5 text-text-main/38">An inclusive and inspiring community for Salsa On2, mambo, workshops, socials, and showteams in Bergen.</p>
-                            <div className="mt-5 flex gap-2">{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="social-link" aria-label={`House of Mambo on ${social.label}`}>{social.shortLabel}</a>)}</div>
+                            <div className="mt-5 flex gap-2">{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="social-link" aria-label={`House of Mambo on ${social.label}`}><SocialIcon platform={social.label} /></a>)}</div>
                         </div>
                         {footerGroups.map((group) => <div key={group.title}><h3 className="micro-label text-gold-main">{group.title}</h3><ul className="mt-4 space-y-2">{group.items.map((item) => <li key={item} className="text-xs leading-5 text-text-main/45">{item}</li>)}</ul></div>)}
                     </div>
                     <div className="flex flex-col justify-between gap-4 py-7 text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-text-main/25 m:flex-row">
                         <p>© 2026 House of Mambo Bergen AS. All rights reserved.</p>
-                        <div className="flex flex-wrap gap-5"><a href={googleFormUrl} target="_blank" rel="noreferrer" className="hover:text-gold-champagne">Course sign-up</a>{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="hover:text-gold-champagne">{social.label}</a>)}</div>
+                        <div className="flex flex-wrap gap-5"><a href={googleFormUrl} target="_blank" rel="noreferrer" className="hover:text-gold-champagne">Course sign-up</a>{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-gold-champagne"><SocialIcon platform={social.label} className="size-3" />{social.label}</a>)}</div>
                     </div>
                     <div className="flex flex-col justify-between gap-3 border-t border-white/8 pt-7 text-text-main/35 m:flex-row m:items-end">
                         <div><p className="font-bebas text-xl tracking-[0.04em] text-gold-main">House of Mambo</p><p className="mt-1 text-[0.58rem] tracking-[0.15em]">Bergen, Norway · Salsa On2 · Classes · Workshops · Community</p></div>
