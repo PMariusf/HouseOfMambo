@@ -105,14 +105,47 @@ export default function Home() {
                             </dl>
                         </div>
 
-                        <div className="relative mx-auto w-full max-w-xl">
-                            <div className="absolute -inset-3 border border-gold-main/15" />
-                            <div className="relative overflow-hidden border border-white/10 bg-black shadow-[0_32px_80px_rgba(0,0,0,0.55)]">
-                                <div className="absolute left-4 top-4 z-10 border border-gold-main/40 bg-black/75 px-3 py-2 text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-gold-champagne backdrop-blur-sm">The official mark</div>
-                                <Image src="/hOm.jpg" alt="House of Mambo Bergen logo featuring classic dance shoes" width={1097} height={1097} priority className="aspect-square h-auto w-full object-cover" />
-                                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/75 to-transparent px-5 pb-5 pt-16">
-                                    <p className="font-bebas text-2xl tracking-[0.08em] text-gold-main">Rhythm · movement · connection</p>
-                                </div>
+                        <div className="relative mx-auto w-full max-w-xl pb-4">
+                            <div className="absolute -inset-3 border border-gold-main/15" aria-hidden="true" />
+
+                            <div className="relative grid grid-cols-[1.25fr_0.75fr] items-end gap-3 m:gap-4">
+                                <figure className="group overflow-hidden border border-white/10 bg-surface shadow-[0_32px_80px_rgba(0,0,0,0.55)]">
+                                    <div className="relative aspect-[4/5] overflow-hidden bg-black">
+                                        <Image
+                                            src="/mambo.dance.png"
+                                            alt="Salsa dancers moving together inside the House of Mambo club"
+                                            fill
+                                            priority
+                                            sizes="(max-width: 767px) 58vw, (max-width: 1023px) 360px, 340px"
+                                            className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.025]"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/20" aria-hidden="true" />
+                                        <span className="absolute left-3 top-3 border border-gold-main/40 bg-black/75 px-2.5 py-2 text-[0.58rem] font-semibold uppercase tracking-[0.18em] text-gold-champagne backdrop-blur-sm m:left-4 m:top-4">
+                                            The sanctuary
+                                        </span>
+                                    </div>
+                                    <figcaption className="border-t border-white/8 p-3 m:p-4">
+                                        <p className="micro-label">Nordic soul · Latin roots</p>
+                                        <p className="mt-2 font-bebas text-xl tracking-[0.08em] text-gold-main m:text-2xl">Kinetic discipline</p>
+                                    </figcaption>
+                                </figure>
+
+                                <figure className="group mb-5 overflow-hidden border border-white/10 bg-surface shadow-[0_24px_60px_rgba(0,0,0,0.5)] m:mb-8">
+                                    <div className="relative aspect-[3/4] overflow-hidden bg-black">
+                                        <Image
+                                            src="/Image+Shadow.png"
+                                            alt="Warmly lit House of Mambo dance floor and lounge"
+                                            fill
+                                            sizes="(max-width: 767px) 34vw, (max-width: 1023px) 210px, 200px"
+                                            className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.035]"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/20" aria-hidden="true" />
+                                    </div>
+                                    <figcaption className="border-t border-white/8 p-3 m:p-4">
+                                        <p className="micro-label">Live percussion</p>
+                                        <p className="mt-2 font-bebas text-lg tracking-[0.08em] text-gold-main m:text-xl">Engineered resonance</p>
+                                    </figcaption>
+                                </figure>
                             </div>
                         </div>
                     </div>
