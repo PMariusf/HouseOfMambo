@@ -35,6 +35,69 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+button,
+input {
+    font: inherit;
+}
+
+.site-container {
+    width: min(100% - 2.5rem, 72rem);
+    margin-inline: auto;
+}
+
+.section-space {
+    padding-block: 6.5rem;
+}
+
+.section-eyebrow {
+    position: relative;
+    padding-left: 1.8rem;
+    color: color-mix(in srgb, var(--color-gold-champagne) 62%, transparent);
+    font-family: var(--font-montserrat);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.section-eyebrow::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 1.15rem;
+    height: 1px;
+    content: "";
+    background: var(--color-gold-main);
+}
+
+.section-title {
+    margin-top: 0.4rem;
+    color: var(--color-gold-main);
+    font-family: var(--font-bebas);
+    font-size: clamp(2.35rem, 5vw, 3.55rem);
+    line-height: 1;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+}
+
+.card-title {
+    color: var(--color-gold-main);
+    font-family: var(--font-bebas);
+    font-size: 1.7rem;
+    line-height: 1;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+}
+
+.micro-value {
+    color: var(--color-gold-champagne);
+    font-family: var(--font-montserrat);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -68,12 +131,14 @@ summary {
 
 @utility btn-primary {
     background-color: var(--color-gold-main);
+    border: 1px solid var(--color-gold-main);
     color: var(--color-background);
     font-family: var(--font-montserrat);
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 0.15em;
-    padding: 0.75rem 2rem;
+    padding: 0.8rem 2rem;
+    font-size: 0.68rem;
     transition: all 300ms ease-in-out;
 
     &:hover {
@@ -88,19 +153,21 @@ summary {
 }
 
 @utility btn-secondary {
-    background-color: transparent;
-    border: 2px solid var(--color-gold-champagne);
-    color: var(--color-gold-champagne);
+    background-color: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: color-mix(in srgb, var(--color-text-main) 78%, transparent);
     font-family: var(--font-montserrat);
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 0.15em;
-    padding: 0.75rem 2rem;
+    padding: 0.8rem 2rem;
+    font-size: 0.68rem;
     transition: all 300ms ease-in-out;
 
     &:hover {
-        background-color: var(--color-gold-champagne);
-        color: var(--color-background);
+        border-color: var(--color-gold-main);
+        background-color: color-mix(in srgb, var(--color-gold-main) 12%, var(--color-surface));
+        color: var(--color-gold-champagne);
     }
 }
 
@@ -169,6 +236,18 @@ summary {
     background: rgba(211, 157, 59, 0.1);
     filter: blur(120px);
     pointer-events: none;
+}
+
+@media (min-width: 768px) {
+    .site-container {
+        width: min(100% - 4rem, 72rem);
+    }
+}
+
+@media (max-width: 767px) {
+    .section-space {
+        padding-block: 4.5rem;
+    }
 }
 
 .mobile-menu[open] > summary {
