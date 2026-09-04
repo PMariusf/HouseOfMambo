@@ -137,6 +137,29 @@ select {
     text-transform: uppercase;
 }
 
+.social-link {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    border: 1px solid color-mix(in srgb, var(--color-gold-main) 45%, transparent);
+    border-radius: 9999px;
+    color: var(--color-gold-champagne);
+    font-family: var(--font-montserrat);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+    border-color: var(--color-gold-main);
+    outline: none;
+    background: var(--color-gold-main);
+    color: var(--color-background);
+}
+
 html {
     scroll-behavior: smooth;
 }
