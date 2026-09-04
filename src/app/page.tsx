@@ -304,7 +304,10 @@ export default function Home() {
                             <blockquote className="border border-white/8 bg-surface/70 p-7 text-base italic leading-7 text-text-main/72">
                                 <span className="mb-2 block font-serif text-3xl not-italic text-gold-main/45">“</span>
                                 The Mambo is alive. Come learn, dance, and help us build Bergen&apos;s On2 community together.
-                                <footer className="mt-5 flex items-center justify-between not-italic"><cite className="micro-label">— House of Mambo Bergen</cite><span className="font-bebas text-2xl tracking-[0.18em] text-gold-main">HOM</span></footer>
+                                <footer className="mt-5 flex items-center justify-between gap-5 not-italic">
+                                    <cite className="micro-label">— House of Mambo Bergen</cite>
+                                    <Image src="/images/house-of-mambo-logo.png" alt="House of Mambo Bergen" width={600} height={408} className="h-auto w-16 shrink-0 object-contain m:w-20" />
+                                </footer>
                             </blockquote>
                         </div>
                     </div>
@@ -322,7 +325,7 @@ export default function Home() {
                 <footer id="about" className="pt-14">
                     <div className="grid gap-10 border-b border-white/8 pb-12 m:grid-cols-2 l:grid-cols-[0.8fr_1fr_1.15fr_1.15fr]">
                         <div>
-                            <p className="font-bebas text-5xl tracking-[0.18em] text-gold-main">HOM</p>
+                            <Image src="/images/house-of-mambo-logo.png" alt="House of Mambo Bergen" width={600} height={408} className="h-auto w-32 object-contain m:w-40" />
                             <p className="micro-label mt-4 text-gold-champagne/50">House of Mambo Bergen</p>
                             <p className="mt-5 max-w-[15rem] text-xs leading-5 text-text-main/38">An inclusive and inspiring community for Salsa On2, mambo, workshops, socials, and showteams in Bergen.</p>
                             <div className="mt-5 flex gap-2">{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="social-link" aria-label={`House of Mambo on ${social.label}`}>{social.shortLabel}</a>)}</div>
