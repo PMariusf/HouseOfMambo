@@ -18,14 +18,16 @@ export default function Home() {
     return (
         <main className="min-h-screen overflow-x-hidden bg-background">
             <header className="border-b border-white/8 bg-background/95">
-                <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between px-5 m:px-8 l:px-12">
-                    <a href="#home" className="group flex items-baseline gap-3" aria-label="House of Mambo home">
-                        <span className="font-bebas text-3xl tracking-[0.16em] text-gold-main transition-colors group-hover:text-gold-champagne">
-                            HOM
-                        </span>
-                        <span className="hidden text-[0.65rem] font-semibold uppercase tracking-[0.24em] text-text-main/60 sm:inline">
-                            House of Mambo Bergen
-                        </span>
+                <div className="mx-auto flex min-h-24 max-w-7xl items-center justify-between px-5 m:px-8 l:px-12">
+                    <a href="#home" className="group shrink-0" aria-label="House of Mambo home">
+                        <Image
+                            src="/images/house-of-mambo-logo.png"
+                            alt="House of Mambo Bergen"
+                            width={600}
+                            height={408}
+                            priority
+                            className="h-auto w-24 object-contain transition-transform duration-300 group-hover:scale-[1.03] m:w-28 l:w-32"
+                        />
                     </a>
 
                     <nav className="hidden items-center gap-7 l:flex" aria-label="Main navigation">
