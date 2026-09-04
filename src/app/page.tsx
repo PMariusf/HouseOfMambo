@@ -1,5 +1,4 @@
 import Image from "next/image";
-import ReservationForm from "./ReservationForm";
 
 const navigation = [
     { label: "Classes", href: "#classes" },
@@ -13,8 +12,6 @@ const socialLinks = [
     { label: "Facebook", href: "https://www.facebook.com/p/House-of-Mambo-Bergen-61592891530613/" },
     { label: "Instagram", href: "https://www.instagram.com/houseofmambo_bergen/" },
 ];
-
-const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLScT5zKljxst6T0PryoGCMd0FzCBLUKAt5WrsHJ5RODgPDK7Ow/viewform";
 
 const highlights = [
     {
@@ -128,7 +125,7 @@ export default function Home() {
                     </nav>
 
                     <div className="hidden items-center gap-4 l:flex">
-                        <a href="#booking" className="btn-primary btn-small">Course sign-up</a>
+                        <a href="/registration" className="btn-primary btn-small">Course sign-up</a>
                         <div className="flex items-center gap-2">
                             {socialLinks.map((social) => (
                                 <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="social-link" aria-label={`House of Mambo on ${social.label}`}><SocialIcon platform={social.label} /></a>
@@ -143,7 +140,7 @@ export default function Home() {
                         </summary>
                         <nav className="absolute right-0 top-14 z-50 flex w-64 flex-col border border-white/10 bg-surface p-2 shadow-2xl" aria-label="Mobile navigation">
                             {navigation.map((item) => <a key={item.label} href={item.href} className="border-b border-white/6 px-4 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-text-main/75 last:border-0 hover:bg-white/5 hover:text-gold-main">{item.label}</a>)}
-                            <a href="#booking" className="btn-primary mt-2 text-center">Course sign-up</a>
+                            <a href="/registration" className="btn-primary mt-2 text-center">Course sign-up</a>
                             <div className="mt-2 grid grid-cols-2 gap-2">
                                 {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 border border-white/10 px-3 py-3 text-center text-xs font-semibold uppercase tracking-[0.12em] text-gold-champagne"><SocialIcon platform={social.label} />{social.label}</a>)}
                             </div>
@@ -175,7 +172,7 @@ export default function Home() {
                                 <p className="max-w-md text-base leading-7 text-text-main/72">An inclusive and inspiring community for Salsa On2 and mambo in Bergen. Learn the foundations, develop your musicality, grow through partnerwork, and become part of the social dance floor.</p>
                                 <div className="mt-7 grid max-w-md gap-3 sm:grid-cols-2">
                                     <a href="#classes" className="btn-primary text-center">Explore classes</a>
-                                    <a href="#booking" className="btn-secondary text-center">Course sign-up</a>
+                                    <a href="/registration" className="btn-secondary text-center">Course sign-up</a>
                                 </div>
                             </div>
 
@@ -238,7 +235,7 @@ export default function Home() {
                             <h3 className="card-title mt-8 text-3xl">{item.title}</h3>
                             <p className="micro-label mt-2 text-gold-champagne/60">{item.subtitle}</p>
                             <p className="mt-4 text-sm leading-6 text-text-main/55">{item.description}</p>
-                            <div className="mt-auto flex items-center justify-between border-t border-white/8 pt-5"><a href="#booking" className="micro-label text-gold-main transition-colors hover:text-gold-champagne">{item.action} →</a><span className="text-[0.6rem] uppercase tracking-[0.14em] text-text-main/30">{item.meta}</span></div>
+                            <div className="mt-auto flex items-center justify-between border-t border-white/8 pt-5"><a href="/registration" className="micro-label text-gold-main transition-colors hover:text-gold-champagne">{item.action} →</a><span className="text-[0.6rem] uppercase tracking-[0.14em] text-text-main/30">{item.meta}</span></div>
                         </article>
                     ))}
                 </div>
@@ -261,22 +258,15 @@ export default function Home() {
                 </div>
             </section>
 
-            <section id="booking" className="border-y border-white/7 bg-[#0d0d0d] scroll-mt-24">
-                <div className="site-container section-space">
-                    <div className="grid gap-10 l:grid-cols-[0.72fr_1.28fr] l:gap-14">
+            <section className="border-y border-white/7 bg-[#0d0d0d]">
+                <div className="site-container py-12 m:py-16">
+                    <div className="grid gap-7 border border-white/8 bg-surface/70 p-6 m:p-8 l:grid-cols-[1fr_auto] l:items-center">
                         <div>
-                            <SectionHeading eyebrow="Course registration" title="Join House of Mambo" />
-                            <p className="mt-6 text-base leading-7 text-text-main/58">Choose the course that fits your level and tell us a little about your dance experience. The team will contact you with availability and the next steps.</p>
-                            <div className="mt-8 border-l border-gold-main/45 pl-5">
-                                <p className="micro-label">Registration notes</p>
-                                <ul className="mt-4 space-y-3 text-sm leading-6 text-text-main/48">
-                                    <li>One 8-week course costs NOK 990.</li>
-                                    <li>Full-time student price is NOK 690.</li>
-                                    <li>Partnerwork courses may use waiting lists to balance leaders and followers.</li>
-                                </ul>
-                            </div>
+                            <p className="section-eyebrow">Course registration</p>
+                            <h2 className="font-bebas mt-2 text-4xl tracking-[0.055em] text-gold-main uppercase">Ready to join?</h2>
+                            <p className="mt-3 max-w-2xl text-sm leading-6 text-text-main/55">Choose your course and send your details on our dedicated registration page. The form is ready for the Google Sheets connection when you want to add it.</p>
                         </div>
-                        <ReservationForm />
+                        <a href="/registration" className="btn-primary inline-flex min-h-12 items-center justify-center text-center">Open registration →</a>
                     </div>
                 </div>
             </section>
@@ -310,7 +300,7 @@ export default function Home() {
                                 <ul className="mt-7 space-y-4">
                                     {courseDetails.map((item) => <li key={item} className="flex gap-3 text-sm leading-6 text-text-main/65"><span className="mt-1 text-gold-main" aria-hidden="true">◉</span><span>{item}</span></li>)}
                                 </ul>
-                                <a href={googleFormUrl} target="_blank" rel="noreferrer" className="btn-primary mt-8 block text-center">Open current sign-up form</a>
+                                <a href="/registration" className="btn-primary mt-8 block text-center">Open registration</a>
                             </article>
 
                             <article className="border border-white/8 bg-surface/70 p-6">
@@ -352,7 +342,7 @@ export default function Home() {
                     </div>
                     <div className="flex flex-col justify-between gap-4 py-7 text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-text-main/25 m:flex-row">
                         <p>© 2026 House of Mambo Bergen AS. All rights reserved.</p>
-                        <div className="flex flex-wrap gap-5"><a href={googleFormUrl} target="_blank" rel="noreferrer" className="hover:text-gold-champagne">Course sign-up</a>{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-gold-champagne"><SocialIcon platform={social.label} className="size-3" />{social.label}</a>)}</div>
+                        <div className="flex flex-wrap gap-5"><a href="/registration" className="hover:text-gold-champagne">Course sign-up</a>{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-gold-champagne"><SocialIcon platform={social.label} className="size-3" />{social.label}</a>)}</div>
                     </div>
                     <div className="flex flex-col justify-between gap-3 border-t border-white/8 pt-7 text-text-main/35 m:flex-row m:items-end">
                         <div><p className="font-bebas text-xl tracking-[0.04em] text-gold-main">House of Mambo</p><p className="mt-1 text-[0.58rem] tracking-[0.15em]">Bergen, Norway · Salsa On2 · Classes · Workshops · Community</p></div>
