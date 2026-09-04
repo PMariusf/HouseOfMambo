@@ -51,9 +51,9 @@ select {
     margin-bottom: 0.55rem;
     color: color-mix(in srgb, var(--color-gold-champagne) 72%, transparent);
     font-family: var(--font-montserrat);
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.09em;
     text-transform: uppercase;
 }
 
@@ -66,7 +66,7 @@ select {
     background: var(--color-background);
     padding: 0.8rem 0.9rem;
     color: var(--color-text-main);
-    font-size: 0.9rem;
+    font-size: 1rem;
     transition: border-color 180ms ease, box-shadow 180ms ease;
 }
 
@@ -93,9 +93,9 @@ select {
     padding-left: 1.8rem;
     color: color-mix(in srgb, var(--color-gold-champagne) 62%, transparent);
     font-family: var(--font-montserrat);
-    font-size: 0.65rem;
+    font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.13em;
     text-transform: uppercase;
 }
 
@@ -131,9 +131,9 @@ select {
 .micro-value {
     color: var(--color-gold-champagne);
     font-family: var(--font-montserrat);
-    font-size: 0.65rem;
+    font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.09em;
     text-transform: uppercase;
 }
 
@@ -198,9 +198,9 @@ summary {
     font-family: var(--font-montserrat);
     text-transform: uppercase;
     font-weight: 500;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
     padding: 0.8rem 2rem;
-    font-size: 0.68rem;
+    font-size: 0.78rem;
     transition: all 300ms ease-in-out;
 
     &:hover {
@@ -211,7 +211,7 @@ summary {
 
 @utility btn-small {
     padding: 0.7rem 1.25rem;
-    font-size: 0.7rem;
+    font-size: 0.78rem;
 }
 
 @utility btn-secondary {
@@ -221,9 +221,9 @@ summary {
     font-family: var(--font-montserrat);
     text-transform: uppercase;
     font-weight: 500;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
     padding: 0.8rem 2rem;
-    font-size: 0.68rem;
+    font-size: 0.78rem;
     transition: all 300ms ease-in-out;
 
     &:hover {
@@ -247,9 +247,9 @@ summary {
     position: relative;
     color: color-mix(in srgb, var(--color-text-main) 62%, transparent);
     font-family: var(--font-montserrat);
-    font-size: 0.7rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.11em;
     text-transform: uppercase;
     transition: color 200ms ease;
 
@@ -281,9 +281,10 @@ summary {
 @utility micro-label {
     color: var(--color-gold-bronze);
     font-family: var(--font-montserrat);
-    font-size: 0.62rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.11em;
+    line-height: 1.5;
     text-transform: uppercase;
 }
 

@@ -75,18 +75,18 @@ export default function ReservationForm() {
                 </div>
             </div>
 
-            <label className="mt-6 flex cursor-pointer items-start gap-3 text-sm leading-6 text-text-main/55">
+            <label className="mt-6 flex cursor-pointer items-start gap-3 text-base leading-7 text-text-main/70">
                 <input className="mt-1 size-4 shrink-0 accent-gold-main" name="consent" type="checkbox" required />
                 <span>I agree that House of Mambo may use these details to contact me about courses and registration.</span>
             </label>
 
             <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <button className="btn-primary min-h-12" type="submit">Register interest</button>
-                <p className="text-xs leading-5 text-text-main/35">Your place is confirmed only after you receive a reply from House of Mambo.</p>
+                <p className="text-sm leading-6 text-text-main/60">Your place is confirmed only after you receive a reply from House of Mambo.</p>
             </div>
 
             {showPreviewNotice && (
-                <div className="mt-6 border border-gold-main/30 bg-gold-main/8 p-4 text-sm leading-6 text-gold-champagne" role="status" aria-live="polite">
+                <div className="mt-6 border border-gold-main/30 bg-gold-main/8 p-4 text-base leading-7 text-gold-champagne" role="status" aria-live="polite">
                     The course form is ready. No information was sent because the Google Form connection will be added later.
                 </div>
             )}

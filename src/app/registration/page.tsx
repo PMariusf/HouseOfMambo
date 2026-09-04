@@ -42,7 +42,7 @@ export default function RegistrationPage() {
                                 <p className="micro-label">Registration notes</p>
                                 <ul className="mt-5 space-y-4">
                                     {registrationNotes.map((note) => (
-                                        <li key={note} className="flex gap-3 text-sm leading-6 text-text-main/55">
+                                        <li key={note} className="flex gap-3 text-base leading-7 text-text-main/70">
                                             <span className="mt-1 text-gold-main" aria-hidden="true">◉</span>
                                             <span>{note}</span>
                                         </li>
@@ -52,7 +52,7 @@ export default function RegistrationPage() {
 
                             <div className="border-l border-gold-main/45 bg-black/25 p-6">
                                 <p className="micro-label text-gold-main">Need help choosing?</p>
-                                <p className="mt-3 text-sm leading-6 text-text-main/50">Select the course that seems closest to your level and use the message field to tell us what you have danced before. We can help place you correctly.</p>
+                                <p className="mt-3 text-base leading-7 text-text-main/68">Select the course that seems closest to your level and use the message field to tell us what you have danced before. We can help place you correctly.</p>
                             </div>
                         </aside>
 
@@ -61,7 +61,7 @@ export default function RegistrationPage() {
                 </div>
             </section>
 
-            <footer className="site-container flex flex-col justify-between gap-4 py-8 text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-text-main/30 m:flex-row">
+            <footer className="site-container flex flex-col justify-between gap-4 py-8 text-xs font-semibold uppercase leading-5 tracking-[0.1em] text-text-main/55 m:flex-row">
                 <p>© 2026 House of Mambo Bergen. All rights reserved.</p>
                 <Link href="/" className="transition-colors hover:text-gold-champagne">House of Mambo home</Link>
             </footer>
