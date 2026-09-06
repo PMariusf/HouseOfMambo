@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import ReservationForm from "../ReservationForm";
 
 export const metadata: Metadata = {
@@ -20,10 +19,10 @@ export default function RegistrationPage() {
         <main className="min-h-screen overflow-x-hidden bg-background">
             <header className="border-b border-white/8 bg-background/95">
                 <div className="site-container flex min-h-[4.75rem] items-center justify-between gap-4 py-3 m:min-h-[5.25rem]">
-                    <Link href="/" aria-label="House of Mambo home" className="group shrink-0">
+                    <a href="/" aria-label="House of Mambo home" className="group shrink-0">
                         <Image src="/images/house-of-mambo-logo.png" alt="House of Mambo Bergen" width={600} height={408} priority className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.025] m:h-14" />
-                    </Link>
-                    <Link href="/" className="btn-secondary btn-small text-center">← Home</Link>
+                    </a>
+                    <a href="/" className="btn-secondary btn-small text-center">← Home</a>
                 </div>
             </header>
 
@@ -65,7 +64,7 @@ export default function RegistrationPage() {
 
             <footer className="site-container flex flex-col justify-between gap-4 py-8 text-xs font-semibold uppercase leading-5 tracking-[0.1em] text-text-main/55 m:flex-row">
                 <p>© 2026 House of Mambo Bergen. All rights reserved.</p>
-                <Link href="/" className="transition-colors hover:text-gold-champagne">House of Mambo home</Link>
+                <a href="/" className="transition-colors hover:text-gold-champagne">House of Mambo home</a>
             </footer>
         </main>
     );
