@@ -62,7 +62,7 @@ export default function RegistrationPage() {
                 </div>
             </section>
 
-            <footer className="site-container flex flex-col justify-between gap-4 py-8 text-xs font-semibold uppercase leading-5 tracking-[0.1em] text-text-main/55 m:flex-row">
+            <footer className="site-container flex flex-col justify-between gap-4 py-8 text-xs font-semibold uppercase leading-5 tracking-[0.1em] text-text-main/75 m:flex-row">
                 <p>© 2026 House of Mambo Bergen. All rights reserved.</p>
                 <div className="flex flex-wrap gap-5"><a href="/privacy" className="transition-colors hover:text-gold-champagne">Privacy information</a><a href="/" className="transition-colors hover:text-gold-champagne">House of Mambo home</a></div>
             </footer>
