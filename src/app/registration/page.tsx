@@ -16,11 +16,11 @@ const registrationNotes = [
 
 export default function RegistrationPage() {
     return (
-        <main className="min-h-screen overflow-x-hidden bg-background">
+        <main id="main-content" className="min-h-screen overflow-x-hidden bg-background" tabIndex={-1}>
             <header className="border-b border-white/8 bg-background/95">
                 <div className="site-container flex min-h-[4.75rem] items-center justify-between gap-4 py-3 m:min-h-[5.25rem]">
                     <a href="/" aria-label="House of Mambo home" className="group relative z-10 -ml-1 shrink-0 m:-ml-3 l:-ml-6 xl:-ml-24">
-                        <Image src="/images/house-of-mambo-logo.png" alt="House of Mambo Bergen" width={600} height={408} priority className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.025] m:h-20 l:h-24" />
+                        <Image src="/images/house-of-mambo-logo.webp" alt="House of Mambo Bergen" width={600} height={408} priority sizes="(max-width: 767px) 82px, (max-width: 1023px) 118px, 142px" className="site-logo h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.025] m:h-20 l:h-24" />
                     </a>
                     <a href="/" className="btn-secondary btn-small text-center">← Home</a>
                 </div>
@@ -64,7 +64,7 @@ export default function RegistrationPage() {
 
             <footer className="site-container flex flex-col justify-between gap-4 py-8 text-xs font-semibold uppercase leading-5 tracking-[0.1em] text-text-main/55 m:flex-row">
                 <p>© 2026 House of Mambo Bergen. All rights reserved.</p>
-                <a href="/" className="transition-colors hover:text-gold-champagne">House of Mambo home</a>
+                <div className="flex flex-wrap gap-5"><a href="/privacy" className="transition-colors hover:text-gold-champagne">Privacy information</a><a href="/" className="transition-colors hover:text-gold-champagne">House of Mambo home</a></div>
             </footer>
         </main>
     );

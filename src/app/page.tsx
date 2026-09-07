@@ -1,4 +1,5 @@
 import Image from "next/image";
+import MobileMenu from "./MobileMenu";
 
 const navigation = [
     { label: "Classes", href: "#classes" },
@@ -113,11 +114,11 @@ function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) 
 
 export default function Home() {
     return (
-        <main id="home" className="min-h-screen overflow-x-hidden bg-background">
+        <main id="main-content" className="min-h-screen overflow-x-hidden bg-background" tabIndex={-1}>
             <header className="sticky top-0 z-50 border-b border-white/8 bg-background/95 backdrop-blur-md">
                 <div className="site-container flex h-[4.75rem] items-center justify-between m:h-[5.25rem]">
-                    <a href="#home" className="group relative z-10 -ml-1 shrink-0 m:-ml-3 l:-ml-6 xl:-ml-24" aria-label="House of Mambo home">
-                        <Image src="/images/house-of-mambo-logo.png" alt="House of Mambo Bergen" width={600} height={408} priority className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.025] m:h-20 l:h-24" />
+                    <a href="#main-content" className="group relative z-10 -ml-1 shrink-0 m:-ml-3 l:-ml-6 xl:-ml-24" aria-label="House of Mambo home">
+                        <Image src="/images/house-of-mambo-logo.webp" alt="House of Mambo Bergen" width={600} height={408} priority sizes="(max-width: 767px) 82px, (max-width: 1023px) 118px, 142px" className="site-logo h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.025] m:h-20 l:h-24" />
                     </a>
 
                     <nav className="hidden items-center gap-8 l:flex" aria-label="Main navigation">
@@ -133,19 +134,7 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <details className="mobile-menu relative l:hidden">
-                        <summary className="grid size-11 cursor-pointer list-none place-items-center border border-white/10 bg-surface text-gold-main [&::-webkit-details-marker]:hidden">
-                            <span className="sr-only">Open navigation</span>
-                            <span className="flex w-5 flex-col gap-1.5" aria-hidden="true"><span className="h-px w-full bg-current" /><span className="h-px w-full bg-current" /><span className="h-px w-full bg-current" /></span>
-                        </summary>
-                        <nav className="fixed inset-x-4 top-[5.25rem] z-50 flex max-h-[calc(100dvh-6.25rem)] flex-col overflow-y-auto border border-white/10 bg-surface p-2 shadow-2xl m:absolute m:inset-x-auto m:right-0 m:top-14 m:w-72" aria-label="Mobile navigation">
-                            {navigation.map((item) => <a key={item.label} href={item.href} className="border-b border-white/6 px-4 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-text-main/75 last:border-0 hover:bg-white/5 hover:text-gold-main">{item.label}</a>)}
-                            <a href="/registration" className="btn-primary mt-2 text-center">Course sign-up</a>
-                            <div className="mt-2 grid grid-cols-2 gap-2">
-                                {socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 border border-white/10 px-3 py-3 text-center text-sm font-semibold uppercase tracking-[0.09em] text-gold-champagne"><SocialIcon platform={social.label} />{social.label}</a>)}
-                            </div>
-                        </nav>
-                    </details>
+                    <MobileMenu navigation={navigation} socialLinks={socialLinks} />
                 </div>
             </header>
 
@@ -185,7 +174,7 @@ export default function Home() {
 
                         <figure className="group flex h-full flex-col overflow-hidden border border-white/8 bg-surface shadow-[0_24px_70px_rgba(0,0,0,0.45)]">
                             <div className="relative aspect-[4/5] shrink-0 overflow-hidden bg-black">
-                                <Image src="/mambo.dance.png" alt="Salsa dancers inside the House of Mambo club" fill loading="eager" fetchPriority="high" sizes="(max-width: 1023px) 100vw, 30vw" className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.025]" />
+                                <Image src="/mambo-dance-main.webp" alt="Salsa dancers inside the House of Mambo club" fill priority loading="eager" fetchPriority="high" quality={70} sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1023px) calc(100vw - 4rem), 317px" className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.025]" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" aria-hidden="true" />
                                 <span className="absolute left-4 top-4 border border-gold-main/35 bg-black/75 px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-gold-champagne backdrop-blur-sm">Salsa On2</span>
                             </div>
@@ -194,7 +183,7 @@ export default function Home() {
 
                         <figure className="group flex h-full flex-col overflow-hidden border border-white/8 bg-surface shadow-[0_24px_70px_rgba(0,0,0,0.45)]">
                             <div className="relative aspect-[4/5] shrink-0 overflow-hidden bg-black">
-                                <Image src="/mambo-dance.png" alt="House of Mambo acoustic dance floor and lounge" fill sizes="(max-width: 1023px) 100vw, 30vw" className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]" />
+                                <Image src="/mambo-dance-floor.webp" alt="House of Mambo acoustic dance floor and lounge" fill quality={70} sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1023px) calc(100vw - 4rem), 317px" className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/20" aria-hidden="true" />
                                 <span className="absolute left-4 top-4 border border-gold-main/35 bg-black/75 px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-gold-champagne backdrop-blur-sm">Community floor</span>
                             </div>
@@ -278,7 +267,7 @@ export default function Home() {
                             <SectionHeading eyebrow="More than weekly classes" title="The Bergen community" />
                             <p className="mt-6 max-w-xl text-base leading-7 text-text-main/58">House of Mambo creates an inclusive and inspiring community for Salsa On2 and mambo in Bergen. Regular courses are supported by weekend workshops, social dance parties, and showteams where dancers can keep developing together.</p>
                             <figure className="relative mt-7 aspect-[4/5] overflow-hidden border border-white/8 bg-black sm:aspect-[16/10]">
-                                <Image src="/mambo.dance.png" alt="The House of Mambo grand ballroom and lounge" fill sizes="(max-width: 1023px) 100vw, 50vw" className="object-cover object-[center_58%]" />
+                                <Image src="/mambo-dance-main.webp" alt="The House of Mambo grand ballroom and lounge" fill quality={70} sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1023px) calc(100vw - 4rem), 552px" className="object-cover object-[center_58%]" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/10" aria-hidden="true" />
                                 <figcaption className="absolute inset-x-0 bottom-0 flex flex-col items-start gap-3 p-5 sm:flex-row sm:items-end sm:justify-between">
                                     <div><p className="micro-label text-gold-champagne/70">Tuesday & Wednesday classes</p><p className="font-bebas text-xl tracking-[0.08em] text-text-main">Forandringshuset V13, 5017 Bergen</p></div>
@@ -314,7 +303,7 @@ export default function Home() {
                                 The Mambo is alive. Come learn, dance, and help us build Bergen&apos;s On2 community together.
                                 <footer className="mt-5 flex flex-col items-start gap-4 not-italic sm:flex-row sm:items-center sm:justify-between">
                                     <cite className="micro-label">— House of Mambo Bergen</cite>
-                                    <Image src="/images/house-of-mambo-logo.png" alt="House of Mambo Bergen" width={600} height={408} className="h-auto w-16 shrink-0 object-contain m:w-20" />
+                                    <Image src="/images/house-of-mambo-logo.webp" alt="House of Mambo Bergen" width={600} height={408} sizes="(max-width: 767px) 64px, 80px" className="h-auto w-16 shrink-0 object-contain m:w-20" />
                                 </footer>
                             </blockquote>
                         </div>
@@ -333,7 +322,7 @@ export default function Home() {
                 <footer id="about" className="pt-14">
                     <div className="grid gap-10 border-b border-white/8 pb-12 m:grid-cols-2 l:grid-cols-[0.8fr_1fr_1.15fr_1.15fr]">
                         <div>
-                            <Image src="/images/house-of-mambo-logo.png" alt="House of Mambo Bergen" width={600} height={408} className="h-auto w-32 object-contain m:w-40" />
+                            <Image src="/images/house-of-mambo-logo.webp" alt="House of Mambo Bergen" width={600} height={408} sizes="(max-width: 767px) 128px, 160px" className="h-auto w-32 object-contain m:w-40" />
                             <p className="micro-label mt-4 text-gold-champagne/50">House of Mambo Bergen</p>
                             <p className="mt-5 max-w-[16rem] text-sm leading-6 text-text-main/60">An inclusive and inspiring community for Salsa On2, mambo, workshops, socials, and showteams in Bergen.</p>
                             <div className="mt-5 flex gap-2">{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="social-link" aria-label={`House of Mambo on ${social.label}`}><SocialIcon platform={social.label} /></a>)}</div>
@@ -342,7 +331,7 @@ export default function Home() {
                     </div>
                     <div className="flex flex-col justify-between gap-4 py-7 text-xs font-semibold uppercase tracking-[0.1em] text-text-main/55 m:flex-row">
                         <p>© 2026 House of Mambo Bergen AS. All rights reserved.</p>
-                        <div className="flex flex-wrap gap-5"><a href="/registration" className="hover:text-gold-champagne">Course sign-up</a>{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-gold-champagne"><SocialIcon platform={social.label} className="size-3" />{social.label}</a>)}</div>
+                        <div className="flex flex-wrap gap-5"><a href="/registration" className="hover:text-gold-champagne">Course sign-up</a><a href="/privacy" className="hover:text-gold-champagne">Privacy</a>{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-gold-champagne"><SocialIcon platform={social.label} className="size-3" />{social.label}</a>)}</div>
                     </div>
                     <div className="flex flex-col justify-between gap-3 border-t border-white/8 pt-7 text-text-main/55 m:flex-row m:items-end">
                         <div><p className="font-bebas text-xl tracking-[0.04em] text-gold-main">House of Mambo</p><p className="mt-1 text-xs leading-5 tracking-[0.1em]">Bergen, Norway · Salsa On2 · Classes · Workshops · Community</p></div>
