@@ -178,7 +178,7 @@ export default function Home() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" aria-hidden="true" />
                                 <span className="absolute left-4 top-4 border border-gold-main/35 bg-black/75 px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-gold-champagne backdrop-blur-sm">Salsa On2</span>
                             </div>
-                            <figcaption className="flex min-h-40 flex-1 flex-col border-t border-white/8 p-5"><h3 className="card-title">Movement & connection</h3><p className="mt-3 text-base leading-7 text-text-main/70">Develop timing, musicality, body movement, and partner connection in a supportive training environment.</p></figcaption>
+                            <figcaption className="flex min-h-40 flex-1 flex-col border-t border-white/8 p-5"><h2 className="card-title">Movement & connection</h2><p className="mt-3 text-base leading-7 text-text-main/70">Develop timing, musicality, body movement, and partner connection in a supportive training environment.</p></figcaption>
                         </figure>
 
                         <figure className="group flex h-full flex-col overflow-hidden border border-white/8 bg-surface shadow-[0_24px_70px_rgba(0,0,0,0.45)]">
@@ -187,7 +187,7 @@ export default function Home() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/20" aria-hidden="true" />
                                 <span className="absolute left-4 top-4 border border-gold-main/35 bg-black/75 px-3 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-gold-champagne backdrop-blur-sm">Community floor</span>
                             </div>
-                            <figcaption className="flex min-h-40 flex-1 flex-col border-t border-white/8 p-5"><h3 className="card-title">Learn, dance, belong</h3><p className="mt-3 text-base leading-7 text-text-main/70">Regular courses, weekend workshops, social dance parties, and showteams bring Bergen&apos;s mambo community together.</p></figcaption>
+                            <figcaption className="flex min-h-40 flex-1 flex-col border-t border-white/8 p-5"><h2 className="card-title">Learn, dance, belong</h2><p className="mt-3 text-base leading-7 text-text-main/70">Regular courses, weekend workshops, social dance parties, and showteams bring Bergen&apos;s mambo community together.</p></figcaption>
                         </figure>
                     </div>
 
@@ -283,8 +283,8 @@ export default function Home() {
                         <div className="space-y-5">
                             <article id="course-signup" className="border border-white/8 bg-[#252525] p-6 m:p-8">
                                 <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
-                                    <div><h3 className="font-bebas text-2xl tracking-[0.06em] text-gold-main">♙ Course registration</h3><p className="micro-label mt-1 text-gold-champagne/55">One complete 8-week course</p></div>
-                                    <p className="font-bebas text-3xl tracking-[0.04em] text-gold-main">NOK 990<span className="text-base text-text-main/50">/course</span></p>
+                                    <div><h3 className="font-bebas text-2xl tracking-[0.06em] text-gold-main">♙ Course registration</h3><p className="micro-label mt-1 text-gold-champagne/75">One complete 8-week course</p></div>
+                                    <p className="font-bebas text-3xl tracking-[0.04em] text-gold-main">NOK 990<span className="text-base text-text-main/75">/course</span></p>
                                 </div>
                                 <ul className="mt-7 space-y-4">
                                     {courseDetails.map((item) => <li key={item} className="flex gap-3 text-base leading-7 text-text-main/75"><span className="mt-1 text-gold-main" aria-hidden="true">◉</span><span>{item}</span></li>)}
@@ -323,17 +323,17 @@ export default function Home() {
                     <div className="grid gap-10 border-b border-white/8 pb-12 m:grid-cols-2 l:grid-cols-[0.8fr_1fr_1.15fr_1.15fr]">
                         <div>
                             <Image src="/images/house-of-mambo-logo.webp" alt="House of Mambo Bergen" width={600} height={408} sizes="(max-width: 767px) 128px, 160px" className="h-auto w-32 object-contain m:w-40" />
-                            <p className="micro-label mt-4 text-gold-champagne/50">House of Mambo Bergen</p>
+                            <p className="micro-label mt-4 text-gold-champagne/75">House of Mambo Bergen</p>
                             <p className="mt-5 max-w-[16rem] text-sm leading-6 text-text-main/60">An inclusive and inspiring community for Salsa On2, mambo, workshops, socials, and showteams in Bergen.</p>
                             <div className="mt-5 flex gap-2">{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="social-link" aria-label={`House of Mambo on ${social.label}`}><SocialIcon platform={social.label} /></a>)}</div>
                         </div>
                         {footerGroups.map((group) => <div key={group.title}><h3 className="micro-label text-gold-main">{group.title}</h3><ul className="mt-4 space-y-2">{group.items.map((item) => <li key={item} className="text-sm leading-6 text-text-main/60">{item}</li>)}</ul></div>)}
                     </div>
-                    <div className="flex flex-col justify-between gap-4 py-7 text-xs font-semibold uppercase tracking-[0.1em] text-text-main/55 m:flex-row">
+                    <div className="flex flex-col justify-between gap-4 py-7 text-xs font-semibold uppercase tracking-[0.1em] text-text-main/75 m:flex-row">
                         <p>© 2026 House of Mambo Bergen AS. All rights reserved.</p>
                         <div className="flex flex-wrap gap-5"><a href="/registration" className="hover:text-gold-champagne">Course sign-up</a><a href="/privacy" className="hover:text-gold-champagne">Privacy</a>{socialLinks.map((social) => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 hover:text-gold-champagne"><SocialIcon platform={social.label} className="size-3" />{social.label}</a>)}</div>
                     </div>
-                    <div className="flex flex-col justify-between gap-3 border-t border-white/8 pt-7 text-text-main/55 m:flex-row m:items-end">
+                    <div className="flex flex-col justify-between gap-3 border-t border-white/8 pt-7 text-text-main/75 m:flex-row m:items-end">
                         <div><p className="font-bebas text-xl tracking-[0.04em] text-gold-main">House of Mambo</p><p className="mt-1 text-xs leading-5 tracking-[0.1em]">Bergen, Norway · Salsa On2 · Classes · Workshops · Community</p></div>
                         <p className="text-xs uppercase leading-5 tracking-[0.1em]">© 2026 House of Mambo Bergen. All rights reserved.</p>
                     </div>
