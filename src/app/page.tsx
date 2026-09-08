@@ -266,12 +266,12 @@ export default function Home() {
                         <div>
                             <SectionHeading eyebrow="More than weekly classes" title="The Bergen community" />
                             <p className="mt-6 max-w-xl text-base leading-7 text-text-main/58">House of Mambo creates an inclusive and inspiring community for Salsa On2 and mambo in Bergen. Regular courses are supported by weekend workshops, social dance parties, and showteams where dancers can keep developing together.</p>
-                            <figure className="relative mt-7 aspect-[4/5] overflow-hidden border border-white/8 bg-black sm:aspect-[16/10]">
-                                <Image src="/bar.png" alt="The House of Mambo grand ballroom and lounge" fill loading="eager" quality={70} sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1023px) calc(100vw - 4rem), 552px" className="object-cover object-[center_58%]" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/10" aria-hidden="true" />
+                            <figure className="relative mt-7 aspect-4/5 overflow-hidden border border-white/8 bg-black sm:aspect-[16/10]">
+                                <Image src="/mambo-venue-text-free.webp" alt="The House of Mambo grand ballroom and lounge" fill loading="eager" quality={70} sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1023px) calc(100vw - 4rem), 552px" className="object-cover object-[center_58%]" />
+                                <div className="absolute inset-0 bg-linear-to-t from-black/90 via-transparent to-black/10" aria-hidden="true" />
                                 <figcaption className="absolute inset-x-0 bottom-0 flex flex-col items-start gap-3 p-5 sm:flex-row sm:items-end sm:justify-between">
                                     <div><p className="micro-label text-gold-champagne/70">Tuesday & Wednesday classes</p><p className="font-bebas text-xl tracking-[0.08em] text-text-main">Forandringshuset V13, 5017 Bergen</p></div>
-                                    <p className="font-bebas text-2xl tracking-[0.04em] text-gold-main">Salsa On2</p>
+                                    <div><p className="micro-label text-gold-champagne/70">Capacity</p><p className="font-bebas text-xl tracking-[0.08em] text-text-main">180 Guests</p></div>
                                 </figcaption>
                             </figure>
                             <div className="mt-5 grid gap-4 sm:grid-cols-2">
