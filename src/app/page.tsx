@@ -266,17 +266,26 @@ export default function Home() {
                         <div>
                             <SectionHeading eyebrow="More than weekly classes" title="The Bergen community" />
                             <p className="mt-6 max-w-xl text-base leading-7 text-text-main/58">House of Mambo creates an inclusive and inspiring community for Salsa On2 and mambo in Bergen. Regular courses are supported by weekend workshops, social dance parties, and showteams where dancers can keep developing together.</p>
-                            <figure className="relative mt-7 aspect-4/5 overflow-hidden border border-white/8 bg-black sm:aspect-[16/10]">
+                            <figure className="relative mt-7 aspect-4/5 overflow-hidden border border-white/8 bg-black sm:aspect-16/10">
                                 <Image src="/mambo-venue-text-free.webp" alt="The House of Mambo grand ballroom and lounge" fill loading="eager" quality={70} sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1023px) calc(100vw - 4rem), 552px" className="object-cover object-[center_58%]" />
                                 <div className="absolute inset-0 bg-linear-to-t from-black/90 via-transparent to-black/10" aria-hidden="true" />
                                 <figcaption className="absolute inset-x-0 bottom-0 flex flex-col items-start gap-3 p-5 sm:flex-row sm:items-end sm:justify-between">
-                                    <div><p className="micro-label text-gold-champagne/70">Tuesday & Wednesday classes</p><p className="font-bebas text-xl tracking-[0.08em] text-text-main">Forandringshuset V13, 5017 Bergen</p></div>
+                                    <div><p className="micro-label text-gold-champagne/70">Tuesday & Wednesday classes</p>
+                                    <p className="font-bebas text-xl tracking-[0.08em] text-text-main">Forandringshuset V13, 5017 Bergen</p></div>
                                     <div><p className="micro-label text-gold-champagne/70">Capacity</p><p className="font-bebas text-xl tracking-[0.08em] text-text-main">180 Guests</p></div>
                                 </figcaption>
                             </figure>
                             <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                                <div className="border border-white/7 bg-surface/55 p-5"><p className="micro-label">Training</p><h3 className="mt-2 text-sm font-semibold uppercase tracking-[0.09em] text-text-main/85">Weekly On2 courses</h3><p className="mt-2 text-sm leading-6 text-text-main/60">Beginner, improver, intermediate, and open-level solo work.</p></div>
-                                <div className="border border-white/7 bg-surface/55 p-5"><p className="micro-label">Community</p><h3 className="mt-2 text-sm font-semibold uppercase tracking-[0.09em] text-text-main/85">Workshops & socials</h3><p className="mt-2 text-sm leading-6 text-text-main/60">Weekend training, social dance parties, and showteams.</p></div>
+                                <div className="border border-white/7 bg-surface/55 p-5">
+                                    <p className="micro-label">Training</p>
+                                    <h3 className="mt-2 text-sm font-semibold uppercase tracking-[0.09em] text-text-main/85">Weekly On2 courses</h3>
+                                    <p className="mt-2 text-sm leading-6 text-text-main/60">Beginner, improver, intermediate, and open-level solo work.</p>
+                                </div>
+                                <div className="border border-white/7 bg-surface/55 p-5">
+                                    <p className="micro-label">Community</p>
+                                    <h3 className="mt-2 text-sm font-semibold uppercase tracking-[0.09em] text-text-main/85">Workshops & socials</h3>
+                                    <p className="mt-2 text-sm leading-6 text-text-main/60">Weekend training, social dance parties, and showteams.</p>
+                                </div>
                             </div>
                         </div>
 
@@ -293,9 +302,22 @@ export default function Home() {
                             </article>
 
                             <article className="border border-white/8 bg-surface/70 p-6">
-                                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"><p className="micro-label">Current course information</p><p className="text-xs uppercase tracking-[0.1em] text-text-main/55">Autumn 2026</p></div>
-                                <div className="mt-5 flex flex-col gap-3 border-b border-white/8 pb-4 sm:flex-row sm:items-center sm:justify-between"><div><h4 className="text-sm font-semibold uppercase tracking-[0.09em] text-text-main/85">Course period</h4><p className="mt-1 text-sm leading-6 text-text-main/60">Monday 24 August — Wednesday 28 October</p></div><span className="micro-label text-gold-main">8 weeks</span></div>
-                                <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"><div><h4 className="text-sm font-semibold uppercase tracking-[0.09em] text-text-main/85">Before class</h4><p className="mt-1 text-sm leading-6 text-text-main/60">Please arrive 5 minutes before your class starts.</p></div><span className="micro-label text-gold-main">Welcome</span></div>
+                                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                                    <p className="micro-label">Current course information</p><p className="text-xs uppercase tracking-[0.1em] text-text-main/55">Autumn 2026</p></div>
+                                <div className="mt-5 flex flex-col gap-3 border-b border-white/8 pb-4 sm:flex-row sm:items-center sm:justify-between">
+                                    <div>
+                                        <h4 className="text-sm font-semibold uppercase tracking-[0.09em] text-text-main/85">Course period</h4>
+                                        <p className="mt-1 text-sm leading-6 text-text-main/60">Monday 24 August — Wednesday 28 October</p>
+                                    </div>
+                                    <span className="micro-label text-gold-main">8 weeks</span>
+                                </div>
+                                <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                                    <div>
+                                        <h4 className="text-sm font-semibold uppercase tracking-[0.09em] text-text-main/85">Before class</h4>
+                                        <p className="mt-1 text-sm leading-6 text-text-main/60">Please arrive 5 minutes before your class starts.</p>
+                                    </div>
+                                    <span className="micro-label text-gold-main">Welcome</span>
+                                </div>
                             </article>
 
                             <blockquote className="border border-white/8 bg-surface/70 p-7 text-base italic leading-7 text-text-main/72">
