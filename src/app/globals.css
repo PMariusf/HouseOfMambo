@@ -7,8 +7,8 @@
     --breakpoint-xl: 1280px; /* Stor PC-skjerm */
 
     /*  Hovedfarger */
-    --color-background: #080808;
-    --color-surface: #1a1a1a;
+    --color-background: #11070b;
+    --color-surface: #211217;
     --color-text-main: #f4f1ea;
 
     /*  Gull og aksenter */
@@ -33,6 +33,14 @@ body {
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+main.bg-background {
+    background-color: var(--color-background);
+    background-image:
+        radial-gradient(circle at 82% 7%, rgba(132, 24, 49, 0.24), transparent 32rem),
+        radial-gradient(circle at 8% 42%, rgba(92, 17, 35, 0.12), transparent 28rem),
+        linear-gradient(180deg, #17090e 0%, #11070b 48%, #0b0708 100%);
 }
 
 .skip-link {
