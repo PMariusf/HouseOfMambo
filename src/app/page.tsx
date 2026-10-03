@@ -86,6 +86,21 @@ const footerGroups = [
     { title: "Fellesskap", items: ["Faste kurs", "Helgeworkshops", "Sosialdanser", "Showteam"] },
 ];
 
+const calendarWeekdays = ["Man", "Tir", "Ons", "Tor", "Fre", "Lør", "Søn"];
+const calendarDays = [
+    { day: 28, outside: true }, { day: 29, outside: true }, { day: 30, outside: true },
+    ...Array.from({ length: 31 }, (_, index) => ({ day: index + 1, outside: false })),
+    { day: 1, outside: true },
+];
+
+function getCalendarEvents(day: number, outside: boolean) {
+    if (outside) return [];
+    if ([5, 12, 19, 26].includes(day)) return ["19:15 Litt øvet", "20:30 Viderekommen"];
+    if ([6, 13, 20, 27].includes(day)) return ["19:00 Fotarbeid"];
+    if ([7, 14, 21, 28].includes(day)) return ["19:00 Nybegynner"];
+    return [];
+}
+
 function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
     return (
         <div>
@@ -251,17 +266,41 @@ export default function Home() {
                             />
                         </div>
                     ) : (
-                        <div className="calendar-placeholder">
-                            <div className="calendar-icon" aria-hidden="true">
-                                <span>●</span>
-                                <strong>HOM</strong>
+                        <div className="calendar-preview">
+                            <div className="calendar-toolbar">
+                                <div>
+                                    <p className="micro-label">House of Mambo</p>
+                                    <h3 className="font-bebas text-3xl tracking-[0.055em] text-text-main">Oktober 2026</h3>
+                                </div>
+                                <div className="flex flex-wrap items-center gap-2">
+                                    <span className="calendar-preview-badge">Forhåndsvisning</span>
+                                    {googleCalendarPublicUrl && <a href={googleCalendarPublicUrl} target="_blank" rel="noreferrer" className="btn-secondary btn-small">Åpne Google Kalender ↗</a>}
+                                </div>
                             </div>
-                            <div>
-                                <p className="micro-label">Google Kalender er klargjort</p>
-                                <h3 className="card-title mt-2">Kommende arrangementer kommer her</h3>
-                                <p className="mt-3 max-w-2xl text-base leading-7 text-text-main/70">Når den offentlige Google Kalender-lenken legges inn, vises kurs, workshops og sosialdanser automatisk her.</p>
+
+                            <div className="calendar-month" aria-label="Forhåndsvisning av kurskalender for oktober 2026">
+                                {calendarWeekdays.map((weekday) => <div key={weekday} className="calendar-weekday">{weekday}</div>)}
+                                {calendarDays.map((date, index) => {
+                                    const events = getCalendarEvents(date.day, date.outside);
+                                    return (
+                                        <div key={`${date.day}-${index}`} className={`calendar-day${date.outside ? " calendar-day--outside" : ""}`}>
+                                            <span className="calendar-date">{date.day}</span>
+                                            <div className="calendar-events">
+                                                {events.map((event) => <span key={event} className="calendar-event">{event}</span>)}
+                                            </div>
+                                        </div>
+                                    );
+                                })}
                             </div>
-                            {googleCalendarPublicUrl && <a href={googleCalendarPublicUrl} target="_blank" rel="noreferrer" className="btn-secondary whitespace-nowrap">Åpne Google Kalender ↗</a>}
+
+                            <div className="calendar-agenda">
+                                <article><time>Man 5. okt. · 19:15</time><h4>Mambo Partnerwork · Litt øvet</h4><p>Bergen Internasjonale Kultursenter</p></article>
+                                <article><time>Man 5. okt. · 20:30</time><h4>Mambo Partnerwork · Viderekommen</h4><p>Bergen Internasjonale Kultursenter</p></article>
+                                <article><time>Tir 6. okt. · 19:00</time><h4>Fotarbeid og musikalitet</h4><p>Forandringshuset V13</p></article>
+                                <article><time>Ons 7. okt. · 19:00</time><h4>Mambo Partnerwork · Nybegynner</h4><p>Forandringshuset V13</p></article>
+                            </div>
+
+                            <p className="calendar-note">Dette er en visuell forhåndsvisning. Den erstattes automatisk av den oppdaterte Google Kalenderen når kalenderlenken kobles til.</p>
                         </div>
                     )}
                 </div>

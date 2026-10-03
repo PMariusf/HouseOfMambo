@@ -281,31 +281,127 @@ select {
     border: 0;
 }
 
-.calendar-placeholder {
-    display: grid;
-    align-items: center;
-    gap: 1.5rem;
+.calendar-preview {
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: color-mix(in srgb, var(--color-surface) 82%, transparent);
-    padding: 1.5rem;
 }
 
-.calendar-icon {
+.calendar-toolbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.25rem;
+}
+
+.calendar-preview-badge {
+    border: 1px solid color-mix(in srgb, var(--color-gold-main) 45%, transparent);
+    background: color-mix(in srgb, var(--color-gold-main) 10%, transparent);
+    padding: 0.55rem 0.7rem;
+    color: var(--color-gold-champagne);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.calendar-month {
+    display: none;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.calendar-weekday {
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.7rem;
+    color: var(--color-gold-champagne);
+    font-family: var(--font-montserrat);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.calendar-day {
+    min-height: 7.5rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.015);
+    padding: 0.55rem;
+}
+
+.calendar-day:nth-child(7n) {
+    border-right: 0;
+}
+
+.calendar-day--outside {
+    background: rgba(0, 0, 0, 0.22);
+    color: color-mix(in srgb, var(--color-text-main) 28%, transparent);
+}
+
+.calendar-date {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-align: right;
+}
+
+.calendar-events {
     display: grid;
-    width: 5rem;
-    height: 5rem;
-    place-items: center;
-    border: 1px solid color-mix(in srgb, var(--color-gold-main) 55%, transparent);
-    background: var(--color-background);
-    color: var(--color-gold-main);
-    font-family: var(--font-bebas);
-    font-size: 1.4rem;
-    letter-spacing: 0.08em;
+    gap: 0.3rem;
+    margin-top: 0.45rem;
 }
 
-.calendar-icon span {
-    margin-bottom: -1.5rem;
-    font-size: 0.6rem;
+.calendar-event {
+    overflow: hidden;
+    border-left: 3px solid var(--color-gold-main);
+    background: color-mix(in srgb, var(--color-gold-main) 16%, var(--color-surface));
+    padding: 0.35rem 0.4rem;
+    color: var(--color-gold-champagne);
+    font-size: 0.66rem;
+    font-weight: 600;
+    line-height: 1.35;
+    text-overflow: ellipsis;
+}
+
+.calendar-agenda {
+    display: grid;
+}
+
+.calendar-agenda article {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.15rem 1.25rem;
+}
+
+.calendar-agenda time {
+    color: var(--color-gold-main);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.calendar-agenda h4 {
+    margin-top: 0.35rem;
+    color: var(--color-text-main);
+    font-family: var(--font-montserrat);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.calendar-agenda p {
+    margin-top: 0.25rem;
+    color: color-mix(in srgb, var(--color-text-main) 68%, transparent);
+    font-size: 0.8rem;
+}
+
+.calendar-note {
+    padding: 1rem 1.25rem;
+    color: color-mix(in srgb, var(--color-text-main) 68%, transparent);
+    font-size: 0.8rem;
+    line-height: 1.6;
 }
 
 html {
@@ -454,9 +550,18 @@ summary {
         width: min(100% - 4rem, 72rem);
     }
 
-    .calendar-placeholder {
-        grid-template-columns: auto 1fr auto;
-        padding: 2rem;
+    .calendar-toolbar {
+        flex-direction: row;
+        align-items: center;
+        padding: 1.25rem 1.5rem;
+    }
+
+    .calendar-month {
+        display: grid;
+    }
+
+    .calendar-agenda {
+        display: none;
     }
 }
 
