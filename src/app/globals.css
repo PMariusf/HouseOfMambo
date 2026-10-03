@@ -282,6 +282,60 @@ select {
     background: #fff;
 }
 
+.event-deck {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.event-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(240, 214, 173, 0.14);
+    background: linear-gradient(160deg, rgba(45, 18, 27, 0.96), rgba(24, 11, 16, 0.98));
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
+}
+
+.event-card-image {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #10070a;
+}
+
+.event-card-date {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    border: 1px solid rgba(211, 157, 59, 0.45);
+    background: rgba(15, 5, 9, 0.86);
+    padding: 0.55rem 0.75rem;
+    color: var(--color-gold-champagne);
+    font-family: var(--font-montserrat);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+}
+
+.event-card-content {
+    display: flex;
+    min-height: 18rem;
+    flex: 1;
+    flex-direction: column;
+    padding: 1.35rem;
+}
+
+.event-card-time {
+    color: var(--color-gold-main);
+    font-family: var(--font-bebas);
+    font-size: 1.2rem;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+}
+
 .calendar-frame {
     display: block;
     width: 100%;
@@ -571,6 +625,10 @@ summary {
     .calendar-agenda {
         display: none;
     }
+
+    .event-deck {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 767px) {
@@ -595,6 +653,10 @@ summary {
 @media (min-width: 1024px) {
     .site-logo {
         max-width: 11rem;
+    }
+
+    .event-deck {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
 

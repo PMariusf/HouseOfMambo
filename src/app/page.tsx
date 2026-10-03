@@ -4,7 +4,7 @@ import SocialIcon from "./SocialIcon";
 
 const navigation = [
     { label: "Kurs", href: "#classes" },
-    { label: "Kalender", href: "#calendar" },
+    { label: "Arrangementer", href: "#events" },
     { label: "Fellesskapet", href: "#club" },
     { label: "Om oss", href: "#about" },
     { label: "Kontakt", href: "#contact" },
@@ -100,6 +100,36 @@ function getCalendarEvents(day: number, outside: boolean) {
     if ([7, 14, 21, 28].includes(day)) return ["19:00 Nybegynner"];
     return [];
 }
+
+const eventCards = [
+    {
+        image: "/events/saturday-social.webp",
+        date: "Lørdag 10. oktober",
+        time: "20:00–01:00",
+        title: "Saturday Social",
+        subtitle: "Salsa · Bachata",
+        place: "Litteraturhuset Bergen",
+        description: "Første utgave av House of Mambos Saturday Social med førfestklasse, sosialdans og DJ-er.",
+    },
+    {
+        image: "/events/pre-party-class.webp",
+        date: "Lørdag 10. oktober",
+        time: "20:00–21:00",
+        title: "Førfestklasse",
+        subtitle: "Cuban Salsa · Litt øvet",
+        place: "Litteraturhuset Bergen",
+        description: "Start kvelden med en Cuban Salsa-klasse med Juan David før dansegulvet åpner.",
+    },
+    {
+        image: "/events/autumn-courses.webp",
+        date: "24. august–28. oktober",
+        time: "Mandag–onsdag",
+        title: "Høstens kurs",
+        subtitle: "Salsa On2 · Mambo",
+        place: "Bergen sentrum",
+        description: "Partnerwork, fotarbeid, musikalitet og kroppsbevegelse for flere nivåer.",
+    },
+];
 
 function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
     return (
@@ -212,7 +242,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section id="events" className="site-container section-space">
+            <section id="courses-overview" className="site-container section-space">
                 <div className="mb-10 flex flex-col justify-between gap-5 border-t border-white/8 pt-8 l:flex-row l:items-end">
                     <SectionHeading eyebrow="Ukentlig trening i Bergen" title="Kurs og fellesskap" />
                     <p className="max-w-md text-base leading-7 text-text-main/65 l:text-right">Velg partnerwork eller solotrening, utvikle ferdighetene dine uke for uke og ta det du lærer med ut på dansegulvet.</p>
@@ -243,6 +273,38 @@ export default function Home() {
                                 <span className="col-span-2 text-xs uppercase leading-5 tracking-[0.08em] text-text-main/60 m:col-span-1">{item.place}</span>
                                 <span className="col-start-2 row-start-1 justify-self-end border border-gold-bronze/30 px-2 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-gold-champagne m:col-start-auto m:row-start-auto">{item.status}</span>
                             </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section id="events" className="border-y border-white/7 bg-[#160a0f]">
+                <div className="site-container section-space">
+                    <div className="mb-10 flex flex-col justify-between gap-5 l:flex-row l:items-end">
+                        <SectionHeading eyebrow="Dette skjer hos House of Mambo" title="Kommende arrangementer" />
+                        <p className="max-w-md text-base leading-7 text-text-main/70 l:text-right">Kurs, workshops og sosiale dansekvelder i Bergen. Følg oss på Facebook for siste nytt og oppdateringer.</p>
+                    </div>
+
+                    <div className="event-deck">
+                        {eventCards.map((event) => (
+                            <article key={event.title} className="event-card group">
+                                <div className="event-card-image">
+                                    <Image src={event.image} alt={`Plakat for ${event.title}`} fill quality={75} sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1023px) calc(50vw - 2.5rem), 360px" className="object-cover transition-transform duration-500 group-hover:scale-[1.025]" />
+                                    <div className="absolute inset-0 bg-linear-to-t from-black/75 via-transparent to-transparent" aria-hidden="true" />
+                                    <span className="event-card-date">{event.date}</span>
+                                </div>
+                                <div className="event-card-content">
+                                    <div className="flex items-start justify-between gap-4">
+                                        <div><p className="micro-label text-gold-champagne/80">{event.subtitle}</p><h3 className="card-title mt-2">{event.title}</h3></div>
+                                        <time className="event-card-time">{event.time}</time>
+                                    </div>
+                                    <p className="mt-4 text-base leading-7 text-text-main/70">{event.description}</p>
+                                    <div className="mt-auto flex items-center justify-between gap-4 border-t border-white/8 pt-5">
+                                        <span className="text-xs font-semibold uppercase leading-5 tracking-[0.08em] text-text-main/70">{event.place}</span>
+                                        <a href={socialLinks[0].href} target="_blank" rel="noreferrer" className="micro-label whitespace-nowrap text-gold-main hover:text-gold-champagne">Se på Facebook ↗</a>
+                                    </div>
+                                </div>
+                            </article>
                         ))}
                     </div>
                 </div>
