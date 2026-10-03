@@ -202,6 +202,112 @@ select {
     color: var(--color-background);
 }
 
+.social-link--facebook:hover,
+.social-link--facebook:focus-visible {
+    border-color: #1877f2;
+    background: #1877f2;
+    color: #fff;
+}
+
+.social-link--instagram:hover,
+.social-link--instagram:focus-visible {
+    border-color: #e1306c;
+    background: linear-gradient(135deg, #833ab4, #e1306c 55%, #f77737);
+    color: #fff;
+}
+
+.social-button {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 0.7rem 0.9rem;
+    color: var(--color-text-main);
+    font-family: var(--font-montserrat);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.social-button:hover {
+    transform: translateY(-1px);
+}
+
+.social-button--facebook {
+    border-color: color-mix(in srgb, #1877f2 55%, transparent);
+    background: color-mix(in srgb, #1877f2 13%, var(--color-surface));
+    color: #dceaff;
+}
+
+.social-button--facebook:hover,
+.social-button--facebook:focus-visible {
+    border-color: #1877f2;
+    background: #1877f2;
+    color: #fff;
+}
+
+.social-button--instagram {
+    border-color: color-mix(in srgb, #e1306c 52%, transparent);
+    background: linear-gradient(135deg, color-mix(in srgb, #833ab4 14%, var(--color-surface)), color-mix(in srgb, #e1306c 12%, var(--color-surface)));
+    color: #ffe3ed;
+}
+
+.social-button--instagram:hover,
+.social-button--instagram:focus-visible {
+    border-color: #e1306c;
+    background: linear-gradient(135deg, #833ab4, #e1306c 55%, #f77737);
+    color: #fff;
+}
+
+.social-button--large {
+    min-height: 3.25rem;
+    padding-inline: 1.25rem;
+}
+
+.calendar-shell {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #fff;
+}
+
+.calendar-frame {
+    display: block;
+    width: 100%;
+    min-height: 42rem;
+    border: 0;
+}
+
+.calendar-placeholder {
+    display: grid;
+    align-items: center;
+    gap: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: color-mix(in srgb, var(--color-surface) 82%, transparent);
+    padding: 1.5rem;
+}
+
+.calendar-icon {
+    display: grid;
+    width: 5rem;
+    height: 5rem;
+    place-items: center;
+    border: 1px solid color-mix(in srgb, var(--color-gold-main) 55%, transparent);
+    background: var(--color-background);
+    color: var(--color-gold-main);
+    font-family: var(--font-bebas);
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+}
+
+.calendar-icon span {
+    margin-bottom: -1.5rem;
+    font-size: 0.6rem;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -347,6 +453,11 @@ summary {
     .site-container {
         width: min(100% - 4rem, 72rem);
     }
+
+    .calendar-placeholder {
+        grid-template-columns: auto 1fr auto;
+        padding: 2rem;
+    }
 }
 
 @media (max-width: 767px) {
@@ -361,6 +472,10 @@ summary {
     .btn-primary,
     .btn-secondary {
         padding-inline: 1.25rem;
+    }
+
+    .calendar-frame {
+        min-height: 36rem;
     }
 }
 
